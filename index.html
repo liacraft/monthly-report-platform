@@ -1,1 +1,1201 @@
-first commit
+<!doctype html>
+<html lang="id">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+        <title>Monthly Report Infographics – Payment Report MTF Mobile</title>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap"
+            rel="stylesheet"
+        />
+        <style>
+            :root {
+                --bg: #ffffff;
+                --ink: #111418;
+                --muted: #6b7078;
+                --panel: #e8e9eb;
+                --card: #ffffff;
+                --line: #eceef1;
+                --bar: #8a9fe6;
+                --bar2: #b6e36b;
+                --teal: #2aa6a4;
+                --orange: #d9791a;
+                --pill: #f1f2f4;
+                --green: #1fa84f;
+                --pt: env(safe-area-inset-top, 0px);
+                --pb: env(safe-area-inset-bottom, 0px);
+            }
+            @media (prefers-color-scheme: dark) {
+                :root:not([data-theme="light"]) {
+                    --bg: #0e1013;
+                    --ink: #f1f2f4;
+                    --muted: #9aa0a8;
+                    --panel: #1a1d22;
+                    --card: #23272d;
+                    --line: #31363d;
+                    --pill: #1d2025;
+                    --bar: #7388d6;
+                    --bar2: #9fcf58;
+                }
+            }
+            :root[data-theme="dark"] {
+                --bg: #0e1013;
+                --ink: #f1f2f4;
+                --muted: #9aa0a8;
+                --panel: #1a1d22;
+                --card: #23272d;
+                --line: #31363d;
+                --pill: #1d2025;
+                --bar: #7388d6;
+                --bar2: #9fcf58;
+            }
+            * {
+                box-sizing: border-box;
+            }
+            :root {
+                box-sizing: border-box;
+                padding-top: var(--pt);
+                padding-bottom: var(--pb);
+            }
+            html {
+                scroll-padding-top: var(--pt);
+            }
+            body {
+                margin: 0;
+                background: var(--bg);
+                color: var(--ink);
+                font-family:
+                    "Outfit",
+                    system-ui,
+                    -apple-system,
+                    "Segoe UI",
+                    sans-serif;
+                line-height: 1.5;
+            }
+            .wrap {
+                max-width: 1240px;
+                margin: 0 auto;
+                padding: 0 24px;
+            }
+
+            .tabs {
+                display: flex;
+                background: var(--pill);
+                border: 1px solid var(--line);
+                border-radius: 999px;
+                padding: 5px;
+                overflow-x: auto;
+            }
+            .tabs a {
+                padding: 9px 20px;
+                border-radius: 999px;
+                color: var(--muted);
+                text-decoration: none;
+                font-size: 15px;
+                white-space: nowrap;
+            }
+            .tabs a.on {
+                background: var(--card);
+                color: var(--ink);
+                font-weight: 500;
+                box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+            }
+            .btn {
+                border-radius: 999px;
+                padding: 12px 30px;
+                font:
+                    500 15px "Outfit",
+                    sans-serif;
+                cursor: pointer;
+                border: 2px solid transparent;
+                text-decoration: none;
+            }
+            .btn.ins {
+                background: var(--bg);
+                color: var(--ink);
+                border-color: var(--teal);
+                border-bottom-color: var(--orange);
+            }
+            .btn.login {
+                background: #000;
+                color: #fff;
+            }
+            @media (prefers-color-scheme: dark) {
+                :root:not([data-theme="light"]) .btn.login {
+                    background: #fff;
+                    color: #000;
+                }
+            }
+            .hero {
+                text-align: center;
+                padding: 56px 0 24px;
+            }
+            .hero .kicker {
+                color: var(--teal);
+                font-size: 18px;
+                margin: 0;
+            }
+            h1 {
+                font-weight: 300;
+                font-size: clamp(36px, 6vw, 68px);
+                line-height: 1.08;
+                margin: 14px 0 22px;
+                letter-spacing: -0.02em;
+            }
+            h1 b {
+                font-weight: 600;
+                background: linear-gradient(90deg, #e0891f, #7a3d0d);
+                -webkit-background-clip: text;
+                background-clip: text;
+                color: transparent;
+            }
+            h1 span {
+                display: block;
+                font-weight: 600;
+            }
+            .hero p.lead {
+                max-width: 640px;
+                margin: 0 auto 32px;
+                color: var(--muted);
+                font-size: 18px;
+            }
+            .switch {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 28px;
+                flex-wrap: wrap;
+            }
+            .switch .btn.dark {
+                background: #000;
+                color: #fff;
+                padding: 18px 64px;
+                font-size: 16px;
+            }
+            @media (prefers-color-scheme: dark) {
+                :root:not([data-theme="light"]) .switch .btn.dark {
+                    background: #fff;
+                    color: #000;
+                }
+            }
+            .switch .alt {
+                background: none;
+                border: 0;
+                color: var(--ink);
+                font:
+                    500 16px "Outfit",
+                    sans-serif;
+                cursor: pointer;
+                display: flex;
+                gap: 10px;
+                align-items: center;
+            }
+            .stage {
+                position: relative;
+                height: 520px;
+                max-width: 900px;
+                margin: 40px auto 0;
+                overflow: hidden;
+            }
+            .halo {
+                position: absolute;
+                left: 50%;
+                bottom: -260px;
+                width: 760px;
+                height: 760px;
+                transform: translateX(-50%);
+                border-radius: 50%;
+                background: var(--pill);
+            }
+            .phone {
+                position: absolute;
+                left: 50%;
+                top: 0;
+                transform: translateX(-50%);
+                width: 490px;
+                max-width: 80%;
+                height: 100%;
+                border: 12px solid #15181c;
+                border-bottom: 0;
+                border-radius: 64px 64px 0 0;
+                background: #fff;
+                overflow: hidden;
+                color: #111;
+            }
+            .phone .top {
+                height: 210px;
+                background: linear-gradient(135deg, #0b4fa8, #1b86d6 60%, #0b63b8);
+                color: #fff;
+                padding: 26px 28px;
+            }
+            .phone .top .t {
+                display: flex;
+                justify-content: space-between;
+                font-weight: 600;
+            }
+            .phone .top .logo {
+                margin-top: 46px;
+                font-size: 30px;
+                font-weight: 700;
+                letter-spacing: -0.02em;
+            }
+            .phone .acc {
+                position: absolute;
+                top: 150px;
+                left: 18px;
+                right: 18px;
+                background: #fff;
+                border-radius: 18px;
+                padding: 18px 20px;
+                box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+            }
+            .acc .n {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                font-size: 18px;
+                font-weight: 500;
+            }
+            .acc .d {
+                border: 1.5px solid #1b86d6;
+                color: #1b86d6;
+                border-radius: 999px;
+                padding: 4px 16px;
+                font-size: 14px;
+            }
+            .acc .r {
+                display: flex;
+                gap: 28px;
+                margin-top: 14px;
+                font-size: 14px;
+                color: #777;
+            }
+            .acc .r b {
+                display: block;
+                color: #111;
+                font-size: 17px;
+                font-weight: 500;
+            }
+            .phone .lay {
+                position: absolute;
+                top: 330px;
+                left: 28px;
+                font-size: 24px;
+                font-weight: 500;
+            }
+            .phone .ic {
+                position: absolute;
+                top: 400px;
+                left: 28px;
+                right: 28px;
+                display: flex;
+                justify-content: space-between;
+            }
+            .phone .ic i {
+                width: 50px;
+                height: 40px;
+                border-radius: 12px;
+                background: #d5f0df;
+                display: block;
+            }
+            .float {
+                position: absolute;
+                background: var(--card);
+                color: var(--ink);
+                border: 2px solid #4a4e55;
+                border-radius: 16px;
+                padding: 18px 22px;
+                box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+                width: 310px;
+            }
+            .float small {
+                color: var(--green);
+                font-size: 12px;
+            }
+            .float .big {
+                font-size: 44px;
+                font-weight: 500;
+                line-height: 1.1;
+                margin: 6px 0 2px;
+            }
+            .float .badge {
+                position: absolute;
+                top: 16px;
+                right: 18px;
+                background: #e3f6e9;
+                color: var(--green);
+                border-radius: 999px;
+                font-size: 12px;
+                padding: 2px 10px;
+            }
+            .f1 {
+                right: 20px;
+                top: 90px;
+                transform: rotate(2.5deg) translate(var(--x, 0px), var(--y, 0px));
+                transition: transform 0.25s ease-out;
+            }
+            .f2 {
+                left: 10px;
+                top: 260px;
+                transform: rotate(-6deg) translate(var(--x, 0px), var(--y, 0px));
+                transition: transform 0.25s ease-out;
+                width: 300px;
+            }
+            @media (max-width: 780px) {
+                .stage {
+                    height: auto;
+                    overflow: visible;
+                    padding-bottom: 24px;
+                }
+                .halo,
+                .phone {
+                    display: none;
+                }
+                .float {
+                    position: static;
+                    transform: none !important;
+                    width: 100%;
+                    margin-bottom: 14px;
+                }
+            }
+            section.panel {
+                background: var(--panel);
+                border-radius: 28px;
+                padding: 30px;
+                margin: 0 0 20px;
+            }
+            .ph {
+                display: flex;
+                justify-content: space-between;
+                align-items: baseline;
+                flex-wrap: wrap;
+                gap: 8px;
+                margin-bottom: 22px;
+            }
+            .ph h2 {
+                font-weight: 400;
+                font-size: clamp(26px, 3.4vw, 38px);
+                margin: 0;
+                letter-spacing: -0.01em;
+            }
+            .ph span {
+                color: var(--muted);
+                font-size: 18px;
+            }
+            .grid {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 14px;
+            }
+            @media (max-width: 980px) {
+                .grid {
+                    grid-template-columns: 1fr 1fr;
+                }
+            }
+            @media (max-width: 640px) {
+                .grid {
+                    grid-template-columns: 1fr;
+                }
+                section.panel {
+                    padding: 16px;
+                }
+            }
+            .card {
+                background: var(--card);
+                border-radius: 22px;
+                padding: 22px 24px 16px;
+            }
+            .card header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                border-bottom: 1px solid var(--line);
+                padding-bottom: 12px;
+                font-size: 15px;
+                font-weight: 500;
+            }
+            .card header em {
+                font-style: normal;
+                display: flex;
+                gap: 8px;
+                align-items: center;
+            }
+            .card header em::before {
+                content: "";
+                width: 18px;
+                height: 18px;
+                border-radius: 5px;
+                background: var(--bar);
+                opacity: 0.7;
+            }
+            .card header small {
+                color: var(--muted);
+                font-weight: 400;
+                font-size: 10px;
+            }
+            .card .v {
+                font-size: 19px;
+                margin: 14px 0 8px;
+                font-weight: 400;
+            }
+            .chart {
+                display: flex;
+                align-items: flex-end;
+                gap: 5%;
+                height: 180px;
+                position: relative;
+                padding-top: 6px;
+            }
+            .col {
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-end;
+                align-items: center;
+                gap: 4px;
+                height: 100%;
+                min-width: 0;
+            }
+            .col i {
+                display: block;
+                width: 9px;
+                border-radius: 6px;
+                background: var(--bar);
+            }
+            .col i.g {
+                background: var(--bar2);
+                width: 8px;
+            }
+            .col.now i {
+                width: 22px;
+                border-radius: 12px;
+            }
+            .col.now i.g {
+                width: 22px;
+            }
+            .tip {
+                position: absolute;
+                right: -2px;
+                bottom: 34px;
+                background: var(--card);
+                border: 1px solid var(--line);
+                border-radius: 10px;
+                padding: 5px 9px;
+                font-size: 11px;
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            }
+            .tip small {
+                display: block;
+                color: var(--muted);
+                font-size: 10px;
+            }
+            .months {
+                display: flex;
+                justify-content: space-between;
+                font-size: 9.5px;
+                color: var(--bar);
+                margin-top: 8px;
+                letter-spacing: 0.02em;
+            }
+            .months b {
+                color: var(--bar);
+                font-weight: 700;
+            }
+            .ytd {
+                display: grid;
+                grid-template-columns: 1fr 2fr;
+                gap: 14px;
+                align-items: stretch;
+            }
+            @media (max-width: 860px) {
+                .ytd {
+                    grid-template-columns: 1fr;
+                }
+            }
+            .big-card {
+                background: var(--card);
+                border-radius: 22px;
+                padding: 24px 30px;
+            }
+            .seg {
+                display: flex;
+                background: var(--pill);
+                border-radius: 12px;
+                padding: 5px;
+                gap: 4px;
+                margin-bottom: 34px;
+                overflow-x: auto;
+            }
+            .seg button {
+                flex: 1;
+                border: 0;
+                background: none;
+                color: var(--muted);
+                font:
+                    400 15px "Outfit",
+                    sans-serif;
+                padding: 10px 16px;
+                border-radius: 9px;
+                cursor: pointer;
+                white-space: nowrap;
+            }
+            .seg button.on {
+                background: var(--card);
+                color: var(--ink);
+                font-weight: 600;
+                box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            }
+            .row {
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-end;
+                gap: 24px;
+                flex-wrap: wrap;
+            }
+            .num {
+                font-size: clamp(56px, 9vw, 100px);
+                font-weight: 400;
+                letter-spacing: -0.04em;
+                line-height: 1;
+            }
+            .num sup {
+                font-size: 13px;
+                color: var(--green);
+                background: #e3f6e9;
+                border-radius: 999px;
+                padding: 3px 10px;
+                letter-spacing: 0;
+                vertical-align: middle;
+                margin-left: 10px;
+                font-weight: 400;
+            }
+            .desc {
+                color: var(--muted);
+                font-size: 14px;
+                max-width: 300px;
+                margin-top: 14px;
+            }
+            .years {
+                display: flex;
+                align-items: flex-end;
+                gap: 14px;
+                height: 150px;
+            }
+            .years div {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+                font-size: 14px;
+                color: var(--muted);
+            }
+            .years i {
+                display: block;
+                width: 68px;
+                border-radius: 12px;
+                background: #d9dadd;
+            }
+            @media (prefers-color-scheme: dark) {
+                :root:not([data-theme="light"]) .years i {
+                    background: #3a3f47;
+                }
+            }
+            .years .cur {
+                color: var(--ink);
+                font-weight: 600;
+            }
+            .years .cur i {
+                background: var(--bar);
+            }
+            html {
+                scroll-behavior: smooth;
+            }
+            .nav {
+                position: sticky;
+                top: var(--pt);
+                z-index: 20;
+                background: color-mix(in srgb, var(--bg) 88%, transparent);
+                -webkit-backdrop-filter: blur(10px);
+                backdrop-filter: blur(10px);
+            }
+            body::before {
+                content: "";
+                position: fixed;
+                inset: 0 0 auto;
+                height: var(--pt);
+                z-index: 30;
+                background: var(--bg);
+            }
+            .navin {
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+                gap: 14px;
+                padding: 14px 24px;
+                flex-wrap: wrap;
+            }
+            .tabs a:hover {
+                color: var(--ink);
+            }
+            .btn {
+                transition: transform 0.15s;
+            }
+            .btn:hover {
+                transform: translateY(-2px);
+            }
+            .switch .btn.dark:not(.act) {
+                background: transparent;
+                color: var(--ink);
+                border-color: var(--line);
+            }
+            .switch .alt {
+                border-radius: 999px;
+                padding: 18px 40px;
+                border: 2px solid transparent;
+            }
+            .switch .alt.act {
+                background: #000;
+                color: #fff;
+            }
+            @media (prefers-color-scheme: dark) {
+                :root:not([data-theme="light"]) .switch .alt.act {
+                    background: #fff;
+                    color: #000;
+                }
+            }
+            .col {
+                cursor: pointer;
+                transition: opacity 0.2s;
+            }
+            .col i {
+                transform-origin: bottom;
+                transform: scaleY(0);
+                transition: transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1);
+            }
+            .chart.in .col i {
+                transform: scaleY(1);
+            }
+            .chart:has(.sel) .col:not(.sel) {
+                opacity: 0.5;
+            }
+            .chart .tip {
+                right: auto;
+                bottom: auto;
+                top: -8px;
+                transform: translateX(-50%);
+                white-space: nowrap;
+                z-index: 2;
+                pointer-events: none;
+            }
+            .col:focus-visible {
+                outline: 2px solid var(--teal);
+                outline-offset: 2px;
+                border-radius: 8px;
+            }
+            .card {
+                transition:
+                    transform 0.2s,
+                    box-shadow 0.2s;
+            }
+            .card:hover {
+                transform: translateY(-3px);
+                box-shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
+            }
+            .years div {
+                cursor: default;
+                transition: transform 0.2s;
+            }
+            .years div:hover {
+                transform: translateY(-4px);
+            }
+            @media (max-width: 720px) {
+                .navin {
+                    justify-content: space-between;
+                    padding: 10px 16px;
+                }
+                .tabs {
+                    order: 3;
+                    width: 100%;
+                }
+                .btn {
+                    padding: 10px 22px;
+                }
+                .switch .btn.dark,
+                .switch .alt {
+                    padding: 14px 34px;
+                }
+                .big-card {
+                    padding: 18px;
+                }
+                .years i {
+                    width: 46px;
+                }
+                .ph span {
+                    font-size: 15px;
+                }
+                .hero {
+                    padding-top: 36px;
+                }
+                .wrap {
+                    padding: 0 16px;
+                }
+            }
+            @media (prefers-reduced-motion: reduce) {
+                html {
+                    scroll-behavior: auto;
+                }
+                .col i {
+                    transform: none;
+                    transition: none;
+                }
+                .float {
+                    transition: none;
+                }
+            }
+            footer {
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                gap: 12px;
+                padding: 56px 0 36px;
+                font-size: 12px;
+                color: var(--muted);
+            }
+            footer div {
+                display: flex;
+                gap: 26px;
+            }
+            footer a {
+                color: inherit;
+                text-decoration: none;
+            }
+            a:focus-visible,
+            button:focus-visible {
+                outline: 3px solid var(--teal);
+                outline-offset: 2px;
+            }
+        </style>
+    </head>
+    <body>
+        <nav class="nav">
+            <div class="wrap navin">
+                <div class="tabs">
+                    <a href="#overview" class="on">Overview</a><a href="#payment">Payment Report</a
+                    ><a href="#transaksi">Transaction Report</a><a href="#unduh">Download Report</a>
+                </div>
+                <a class="btn ins" href="#transaksi">Insights</a>
+                <a class="btn login" href="#login">Login</a>
+            </div>
+        </nav>
+        <div class="wrap">
+            <header class="hero" id="overview">
+                <p class="kicker">Monthly Overview Oktober 2026</p>
+                <h1>Monthly Report <b>Infographics</b><span>Payment Report</span></h1>
+                <p class="lead">
+                    Ringkasan performa transaksi dan pembayaran MTF Mobile selama Oktober 2026, disajikan melalui
+                    visualisasi data yang informatif dan mudah dipahami.
+                </p>
+                <div class="switch">
+                    <button class="btn dark act" data-p="MTF Mobile" aria-pressed="true">MTF Mobile</button>
+                    <button class="alt" data-p="MTF 1 Access" aria-pressed="false">
+                        <svg
+                            width="22"
+                            height="22"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.6"
+                        >
+                            <ellipse cx="12" cy="5" rx="7" ry="3" />
+                            <path d="M5 5v14c0 1.7 3.1 3 7 3s7-1.3 7-3V5M5 12c0 1.7 3.1 3 7 3s7-1.3 7-3" /></svg
+                        >MTF 1 Access
+                    </button>
+                </div>
+            </header>
+
+            <div class="stage" aria-label="Pratinjau aplikasi MTF Mobile">
+                <div class="halo"></div>
+                <div class="phone">
+                    <div class="top">
+                        <div class="t"><span>12:22</span><span>●●●</span></div>
+                        <div class="logo">MTF <i style="font-weight: 500">mobile</i></div>
+                    </div>
+                    <div class="acc">
+                        <div class="n">
+                            <span>John Doe<br /><b>991xxxxxxx</b></span
+                            ><span class="d">Detail</span>
+                        </div>
+                        <div class="r">
+                            <span>Angsuran<b>Rp. 4.250.0000</b></span
+                            ><span>Jatuh Tempo<b>31/10/2026</b></span>
+                        </div>
+                    </div>
+                    <div class="lay">Layanan</div>
+                    <div class="ic">
+                        <i></i><i style="background: #fbe8c8"></i><i style="background: #cfe5fb"></i><i></i>
+                    </div>
+                </div>
+                <div class="float f1">
+                    <span class="badge">+8.5%</span>
+                    <div style="font-size: 15px">Total Payment Value</div>
+                    <div class="big"><span data-c="85.6" data-d="1">85,6</span> M</div>
+                    <small>↑ Rp 6,7 M dibanding bulan sebelumnya</small>
+                </div>
+                <div class="float f2">
+                    <span class="badge">+8.5%</span>
+                    <div style="font-size: 15px">User Active</div>
+                    <div class="big"><span data-c="24580">24.580</span></div>
+                    <small>↑ 1.930 users from September 2026</small>
+                </div>
+            </div>
+        </div>
+
+        <main class="wrap" style="margin-top: 0" id="payment">
+            <section class="panel">
+                <div class="ph">
+                    <h2 id="ptitle">Payment Report MTF Mobile</h2>
+                    <span>Oktober 2026</span>
+                </div>
+                <div class="grid" id="grid"></div>
+            </section>
+
+            <section class="panel" id="transaksi">
+                <div class="ytd">
+                    <div class="card" id="ua"></div>
+                    <div class="big-card">
+                        <div class="seg" id="seg" role="tablist"></div>
+                        <div class="row">
+                            <div>
+                                <div class="num"><span id="ytdNum">1,30T</span><sup id="ytdBadge">↗ +12%</sup></div>
+                                <p class="desc" id="ytdDesc">
+                                    Perbandingan capaian jumlah transaksi tahunan untuk melihat perkembangan aktivitas
+                                    MTF Mobile.
+                                </p>
+                            </div>
+                            <div class="years" id="years"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <div class="wrap" id="unduh">
+            <footer>
+                <span>© 2026 aml.works</span>
+                <div><a href="#">Privacy policy</a><a href="#">Terms of service</a><a href="#">Need help?</a></div>
+            </footer>
+        </div>
+
+        <script>
+            var M = ["JAN", "FEB", "MAR", "APR", "MEI", "JUN", "JUL", "AGU", "SEP", "OKT", "NOV", "DES"];
+            var A = [100, 52, 38, 36, 76, 50, 56, 40, 52, 64, 0, 0]; // blue heights (% of 150px)
+            var G = [20, 6, 0, 10, 0, 10, 26, 0, 22, 28, 0, 0]; // green accent
+            function chart(tip, label) {
+                var h = '<div class="chart">';
+                for (var i = 0; i < 12; i++) {
+                    var now = i === 9;
+                    var b = Math.round(A[i] * 1.35),
+                        g = Math.round(G[i] * 1.35);
+                    h +=
+                        '<div class="col' +
+                        (now ? " now" : "") +
+                        '">' +
+                        (g ? '<i class="g" style="height:' + g + 'px"></i>' : "") +
+                        '<i style="height:' +
+                        Math.max(b, i > 9 ? 4 : 0) +
+                        'px"></i></div>';
+                }
+                h += '<div class="tip">● ' + tip + '<small>Okt, 2026</small></div></div><div class="months">';
+                for (i = 0; i < 12; i++) h += (i === 9 ? "<b>" : "<span>") + M[i] + (i === 9 ? "</b>" : "</span>");
+                return h + "</div>";
+            }
+            var cards = [
+                ["Jumlah Transaksi (MTD)", "Rp 202,301,673,794", "202,3 M"],
+                ["Pembayaran Angsuran", "Rp 97,975,404,225", "97,9 M"],
+                ["Pelunasan Dipercepat", "Rp 104,232,861,840", "104,2 M"],
+                ["Pembayaran Denda", "Rp 2,876,064,329", "2,88 M"],
+                ["Biaya Tagih", "Rp 498,725,162", "498,7 JT"],
+                ["Fee Based", "Rp 111,717,826", "111,7 JT"],
+            ];
+            document.getElementById("grid").innerHTML = cards
+                .map(function (c) {
+                    return (
+                        '<article class="card"><header><em>' +
+                        c[0] +
+                        '</em><small>00000,00 &nbsp;+0,0%</small></header><div class="v">' +
+                        c[1] +
+                        "</div>" +
+                        chart(c[2]) +
+                        "</article>"
+                    );
+                })
+                .join("");
+            document.getElementById("ua").innerHTML =
+                '<header><em>User Active</em><small>00000,00 &nbsp;+0,0%</small></header><div class="v">32.920</div>' +
+                chart("32.920");
+
+            var data = {
+                "Jumlah Transaksi (YTD)": {
+                    n: "1,30T",
+                    b: "↗ +12%",
+                    d: "Perbandingan capaian jumlah transaksi tahunan untuk melihat perkembangan aktivitas MTF Mobile.",
+                    y: [22, 40, 55, 100],
+                },
+                "Jumlah Transaksi (MTD)": {
+                    n: "202,3M",
+                    b: "↗ +8,5%",
+                    d: "Total nilai transaksi bulan berjalan dibandingkan dengan Oktober tahun-tahun sebelumnya.",
+                    y: [30, 38, 60, 100],
+                },
+                "Pembayaran Angsuran": {
+                    n: "97,9M",
+                    b: "↗ +6,2%",
+                    d: "Nilai pembayaran angsuran pada Oktober dari tahun ke tahun.",
+                    y: [26, 42, 58, 100],
+                },
+            };
+            var yrs = ["2023", "2024", "2025", "2026"];
+            var seg = document.getElementById("seg");
+            Object.keys(data).forEach(function (k, i) {
+                var b = document.createElement("button");
+                b.textContent = k;
+                b.setAttribute("role", "tab");
+                if (!i) b.className = "on";
+                b.onclick = function () {
+                    [].forEach.call(seg.children, function (x) {
+                        x.className = "";
+                    });
+                    b.className = "on";
+                    show(k);
+                };
+                seg.appendChild(b);
+            });
+            function show(k) {
+                var d = data[k];
+                document.getElementById("ytdNum").textContent = d.n;
+                document.getElementById("ytdBadge").textContent = d.b;
+                document.getElementById("ytdDesc").textContent = d.d;
+                document.getElementById("years").innerHTML = d.y
+                    .map(function (v, i) {
+                        return (
+                            '<div class="' +
+                            (i === 3 ? "cur" : "") +
+                            '"><i style="height:' +
+                            Math.round(v * 1.4) +
+                            'px"></i>' +
+                            yrs[i] +
+                            "</div>"
+                        );
+                    })
+                    .join("");
+            }
+            show("Jumlah Transaksi (YTD)");
+        </script>
+        <script>
+            (function () {
+                var RM = matchMedia("(prefers-reduced-motion:reduce)").matches;
+                var prod = { "MTF Mobile": 1, "MTF 1 Access": 0.58 };
+                var raw = [
+                    ["Jumlah Transaksi (MTD)", 202301673794],
+                    ["Pembayaran Angsuran", 97975404225],
+                    ["Pelunasan Dipercepat", 104232861840],
+                    ["Pembayaran Denda", 2876064329],
+                    ["Biaya Tagih", 498725162],
+                    ["Fee Based", 111717826],
+                ];
+                var userRaw = 32920;
+                function fmt(n) {
+                    return Math.round(n).toLocaleString("en-US");
+                }
+                function short(n) {
+                    return n >= 1e9
+                        ? (n / 1e9).toFixed(1).replace(".", ",") + " M"
+                        : n >= 1e6
+                          ? (n / 1e6).toFixed(1).replace(".", ",") + " JT"
+                          : Math.round(n).toLocaleString("id-ID");
+                }
+                function chart(base, user) {
+                    var h = '<div class="chart">';
+                    for (var i = 0; i < 12; i++) {
+                        var tot = A[i] + G[i],
+                            v =
+                                i > 9
+                                    ? "Belum ada data"
+                                    : user
+                                      ? Math.round((base * tot) / (A[9] + G[9])).toLocaleString("id-ID")
+                                      : short((base * tot) / (A[9] + G[9]));
+                        var b = Math.round(A[i] * 1.35),
+                            g = Math.round(G[i] * 1.35);
+                        h +=
+                            '<div class="col' +
+                            (i === 9 ? " now" : "") +
+                            '" tabindex="0" data-i="' +
+                            i +
+                            '" data-m="' +
+                            M[i] +
+                            '" data-v="' +
+                            v +
+                            '" aria-label="' +
+                            M[i] +
+                            " 2026: " +
+                            v +
+                            '">' +
+                            (g ? '<i class="g" style="height:' + g + 'px"></i>' : "") +
+                            '<i style="height:' +
+                            Math.max(b, i > 9 ? 4 : 0) +
+                            'px"></i></div>';
+                    }
+                    h += '<div class="tip"></div></div><div class="months">';
+                    for (i = 0; i < 12; i++) h += (i === 9 ? "<b>" : "<span>") + M[i] + (i === 9 ? "</b>" : "</span>");
+                    return h + "</div>";
+                }
+                function sel(ch, col) {
+                    var t = ch.querySelector(".tip");
+                    ch.querySelectorAll(".col.sel").forEach(function (c) {
+                        c.classList.remove("sel");
+                    });
+                    col.classList.add("sel");
+                    t.innerHTML = "● " + col.dataset.v + "<small>" + col.dataset.m + ", 2026</small>";
+                    var w = t.offsetWidth,
+                        x = col.offsetLeft + col.offsetWidth / 2;
+                    t.style.left = Math.max(w / 2, Math.min(ch.clientWidth - w / 2, x)) + "px";
+                }
+                var io = new IntersectionObserver(
+                    function (es) {
+                        es.forEach(function (e) {
+                            if (e.isIntersecting) {
+                                e.target.classList.add("in");
+                                io.unobserve(e.target);
+                            }
+                        });
+                    },
+                    { threshold: 0.3 }
+                );
+                function init() {
+                    document.querySelectorAll(".chart").forEach(function (ch) {
+                        var cols = ch.querySelectorAll(".col"),
+                            def = cols[9];
+                        function go(e) {
+                            var c = e.target.closest(".col");
+                            if (c) sel(ch, c);
+                        }
+                        ch.addEventListener("mouseover", go);
+                        ch.addEventListener("focusin", go);
+                        ch.addEventListener("click", go);
+                        ch.addEventListener("mouseleave", function () {
+                            sel(ch, def);
+                        });
+                        sel(ch, def);
+                        if (RM) ch.classList.add("in");
+                        else io.observe(ch);
+                    });
+                }
+                function render(p) {
+                    var k = prod[p];
+                    document.getElementById("grid").innerHTML = raw
+                        .map(function (c) {
+                            return (
+                                '<article class="card"><header><em>' +
+                                c[0] +
+                                '</em><small>00000,00 &nbsp;+0,0%</small></header><div class="v">Rp ' +
+                                fmt(c[1] * k) +
+                                "</div>" +
+                                chart(c[1] * k) +
+                                "</article>"
+                            );
+                        })
+                        .join("");
+                    document.getElementById("ua").innerHTML =
+                        '<header><em>User Active</em><small>00000,00 &nbsp;+0,0%</small></header><div class="v">' +
+                        Math.round(userRaw * k).toLocaleString("id-ID") +
+                        "</div>" +
+                        chart(userRaw * k, true);
+                    init();
+                }
+                render("MTF Mobile");
+                addEventListener("resize", function () {
+                    document.querySelectorAll(".chart").forEach(function (ch) {
+                        var s = ch.querySelector(".col.sel");
+                        if (s) sel(ch, s);
+                    });
+                });
+                document.querySelectorAll(".switch button").forEach(function (b) {
+                    b.onclick = function () {
+                        document.querySelectorAll(".switch button").forEach(function (x) {
+                            x.classList.remove("act");
+                            x.setAttribute("aria-pressed", "false");
+                        });
+                        b.classList.add("act");
+                        b.setAttribute("aria-pressed", "true");
+                        document.getElementById("ptitle").textContent = "Payment Report " + b.dataset.p;
+                        render(b.dataset.p);
+                    };
+                });
+                /* hitung naik angka di kartu hero */
+                function cu(el) {
+                    var to = parseFloat(el.dataset.c),
+                        d = +el.dataset.d || 0,
+                        t0 = performance.now();
+                    (function f(t) {
+                        var p = Math.min(1, (t - t0) / 1400);
+                        p = 1 - Math.pow(1 - p, 3);
+                        var v = to * p;
+                        el.textContent = d ? v.toFixed(d).replace(".", ",") : Math.round(v).toLocaleString("id-ID");
+                        if (p < 1) requestAnimationFrame(f);
+                    })(t0);
+                }
+                if (!RM) document.querySelectorAll("[data-c]").forEach(cu);
+                /* kartu melayang mengikuti kursor */
+                var st = document.querySelector(".stage");
+                if (!RM && matchMedia("(hover:hover)").matches) {
+                    var f1 = st.querySelector(".f1"),
+                        f2 = st.querySelector(".f2");
+                    st.addEventListener("mousemove", function (e) {
+                        var r = st.getBoundingClientRect(),
+                            dx = (e.clientX - r.left) / r.width - 0.5,
+                            dy = (e.clientY - r.top) / r.height - 0.5;
+                        f1.style.setProperty("--x", dx * -26 + "px");
+                        f1.style.setProperty("--y", dy * -18 + "px");
+                        f2.style.setProperty("--x", dx * 26 + "px");
+                        f2.style.setProperty("--y", dy * 18 + "px");
+                    });
+                    st.addEventListener("mouseleave", function () {
+                        [f1, f2].forEach(function (f) {
+                            f.style.setProperty("--x", "0px");
+                            f.style.setProperty("--y", "0px");
+                        });
+                    });
+                }
+                /* tab nav ikut posisi scroll */
+                var links = document.querySelectorAll(".tabs a");
+                var spy = new IntersectionObserver(
+                    function (es) {
+                        es.forEach(function (e) {
+                            if (e.isIntersecting) {
+                                links.forEach(function (a) {
+                                    var on = a.getAttribute("href") === "#" + e.target.id;
+                                    a.classList.toggle("on", on);
+                                    if (on) a.scrollIntoView({ inline: "center", block: "nearest" });
+                                });
+                            }
+                        });
+                    },
+                    { rootMargin: "-40% 0px -55% 0px" }
+                );
+                ["overview", "payment", "transaksi", "unduh"].forEach(function (id) {
+                    var n = document.getElementById(id);
+                    if (n) spy.observe(n);
+                });
+                /* klik tahun untuk membandingkan */
+                document.getElementById("years").addEventListener("click", function (e) {
+                    var d = e.target.closest("div[class],div");
+                    if (!d || d === this) return;
+                    this.querySelectorAll("div").forEach(function (x) {
+                        x.classList.remove("cur");
+                    });
+                    d.classList.add("cur");
+                });
+            })();
+        </script>
+    </body>
+</html>
